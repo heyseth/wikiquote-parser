@@ -1,6 +1,6 @@
-# wickedQuotes
+# wikiquote-parser
 
-There aren't any large, public datasets of quotes to be found online, so I decided to create my own by parsing and cleaning up a Wikiquote data dump.
+There aren't many large, public datasets of quotes online, so I created my own by parsing and cleaning up a Wikiquote data dump.
 
 ## Setup
 
@@ -22,15 +22,40 @@ Extract the archive:
 
 Run the program:
 
-`./parse.py enwikiquote-latest-pages-articles.xml`
+`./parse_json.py enwikiquote-latest-pages-articles.xml`
 
 There are two optional parameters: quote cutoff length, and desired language. The default cutoff length is 100 characters, and the default language is English. The language must be specified as an [ISO Language Code](https://www.w3schools.com/tags/ref_language_codes.asp).
 
 For instance, if you wanted quotes only in Spanish, and less than 50 characters in length, you would enter the following:
 
-`./parse.py enwikiquote-latest-pages-articles.xml 50 es`
+`./parse_json.py enwikiquote-latest-pages-articles.xml 50 es`
 
-Alternatively, if you don't want to specify a language, simply enter "all" (no quotes) for the language parameter. This will massively shorten the time it takes the program to run.
+Alternatively, if you don't want to specify a language, enter "all" (no quotes) for the language parameter. This will massively shorten the time it takes the program to run.
+
+## Analysis Tools
+
+The repository also includes two scripts for analyzing and visualizing the quote data:
+
+### Statistical Analysis
+
+Performs statistical analysis on the quotes using NumPy and Pandas:
+- Calculates quote length statistics (mean, median, standard deviation)
+- Groups quotes by first word and provides aggregated statistics
+- Handles JSON files structured as `{"author": ["quote1", "quote2", ...], ...}`
+
+Usage:
+
+`./stats_analysis.py path/to/quotes.json`
+
+### Data Visualization
+
+Creates visualizations using Matplotlib:
+- Generates and displays a histogram showing the distribution of quote lengths
+- Generates and displays a bar chart of the top 10 most common first words
+
+Usage:
+
+`./visualize_quotes.py path/to/quotes.json`
 
 ## License
 

@@ -1,3 +1,6 @@
 xmltodict
 langdetect
 unidecode
+numpy
+pandas
+matplotlib
