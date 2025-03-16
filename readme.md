@@ -22,13 +22,13 @@ Extract the archive:
 
 Run the program:
 
-`./parse_json.py enwikiquote-latest-pages-articles.xml`
+`./parse_xml.py enwikiquote-latest-pages-articles.xml`
 
 There are two optional parameters: quote cutoff length, and desired language. The default cutoff length is 100 characters, and the default language is English. The language must be specified as an [ISO Language Code](https://www.w3schools.com/tags/ref_language_codes.asp).
 
 For instance, if you wanted quotes only in Spanish, and less than 50 characters in length, you would enter the following:
 
-`./parse_json.py enwikiquote-latest-pages-articles.xml 50 es`
+`./parse_xml.py enwikiquote-latest-pages-articles.xml 50 es`
 
 Alternatively, if you don't want to specify a language, enter "all" (no quotes) for the language parameter. This will massively shorten the time it takes the program to run.
 
